@@ -1,14 +1,21 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
+import Paper from '../../components/Paper';
+import MontserratText from '../../components/MontserratText';
 
 const Todos = () => {
   return (
-    <View>
-      <Text>Todos</Text>
-    </View>
+    <>
+      <View>
+        <Paper>
+          <View
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <MontserratText>Todos!</MontserratText>
+          </View>
+        </Paper>
+      </View>
+    </>
   );
 };
 
 export default Todos;
-
-const styles = StyleSheet.create({});

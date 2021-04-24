@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import fonts from '../../utils';
+import {View, StyleSheet, ScrollView} from 'react-native';
+import MontserratText from '../MontserratText';
 
 const Paper = ({children}) => {
   return (
@@ -12,7 +12,7 @@ const Paper = ({children}) => {
             justifyContent: 'center',
             flexDirection: 'row',
             backgroundColor: 'white',
-            paddingBottom: 100,
+            paddingBottom: 80,
           }}>
           <View style={styles.paper}>
             <View
@@ -21,19 +21,19 @@ const Paper = ({children}) => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
               }}>
-              <Text style={{flex: 1, top: 10, backgroundColor: 'white'}}>
+              <MontserratText
+                style={{flex: 1, top: 10, backgroundColor: 'white'}}>
                 Logo
-              </Text>
-              <Text
+              </MontserratText>
+              <MontserratText
                 style={{
                   flex: 1,
                   top: 10,
                   backgroundColor: 'white',
                   textAlign: 'right',
-                  fontFamily: fonts.primary.normal,
                 }}>
                 Dandi Indra Wijaya
-              </Text>
+              </MontserratText>
             </View>
             {children}
           </View>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   paper: {
     marginTop: 10,
     width: '95%',
-    minHeight: 650,
+    minHeight: 700,
     borderWidth: 1,
     borderColor: 'gainsboro',
     borderStyle: 'solid',
