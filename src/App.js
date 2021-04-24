@@ -1,18 +1,16 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {View, Text} from 'react-native';
+// import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Profile from './pages/Profile';
-
-const Stack = createStackNavigator();
+import Todos from './pages/Todos';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Profile" component={Profile} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View>
+      <Text>Hello World!</Text>
+    </View>
   );
 };
 
