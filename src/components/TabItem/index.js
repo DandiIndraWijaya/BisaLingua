@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import color from '../../style/color';
 import {
   faClock,
   faCalendar,
@@ -12,23 +13,22 @@ const TabItem = ({title, active, onPress, onLongPress}) => {
   const [titleTab, setTitleTab] = useState(title);
 
   useEffect(() => {
-    console.log(titleTab);
-  }, [title, active]);
-
-  useEffect(() => {
     if (title === 'KategoriProduk') {
       setTitleTab('Produk');
     }
   }, []);
 
   const Icon = () => {
-    if (title == 'Home') {
-      return <FontAwesomeIcon icon={faClock} />;
+    if (title === 'Todos') {
+      return <FontAwesomeIcon size={32} color="#4c4c4c" icon={faClock} />;
     }
-    if (title == 'Settings') {
-      return <FontAwesomeIcon icon={faCalendar} />;
+    if (title === 'Schedule') {
+      return <FontAwesomeIcon size={32} color="#4c4c4c" icon={faCalendar} />;
     }
-    return <FontAwesomeIcon icon={faUser} />;
+    if (title === 'About') {
+      return <FontAwesomeIcon size={32} color="#4c4c4c" icon={faBook} />;
+    }
+    return <FontAwesomeIcon size={32} color="#4c4c4c" icon={faUser} />;
   };
 
   return (
@@ -36,7 +36,6 @@ const TabItem = ({title, active, onPress, onLongPress}) => {
       activeOpacity={0.2}
       style={styles.container}
       onPress={onPress}
-      onPressIn={() => (title == 'Info' ? setBadge(0) : null)}
       onLongPress={onLongPress}>
       <Icon />
       <Text style={styles.title(active)}>{titleTab}</Text>
@@ -51,9 +50,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: active => ({
-    fontSize: 10,
-    color: active ? 'black' : 'blue',
+    fontSize: 14,
+    color: active ? color.secondary : color.primary,
     marginTop: 4,
+    backgroundColor: active ? color.primary : color.secondary,
+    padding: 5,
+    borderRadius: 8,
   }),
   icon: {
     width: 22,
