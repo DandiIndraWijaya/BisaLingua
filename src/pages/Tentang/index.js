@@ -4,7 +4,7 @@ import Paper from '../../components/Paper';
 import MontserratText from '../../components/MontserratText';
 import Header from '../../components/Header';
 
-const About = ({navigation}) => {
+const Home = () => {
   const handleBackButton = () => {
     Alert.alert(
       'Keluar',
@@ -33,14 +33,14 @@ const About = ({navigation}) => {
 
   return (
     <>
-      <Header icon="none" navigation={navigation} />
+      <Header icon="none" />
       <Paper>
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <MontserratText style={{color: 'black'}}>About!</MontserratText>
+          <MontserratText style={{color: 'black'}}>Tentang!</MontserratText>
         </View>
       </Paper>
     </>
   );
 };
 
-export default About;
+export default Home;

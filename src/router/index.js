@@ -1,12 +1,14 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
-import Todos from '../pages/Todos';
-import Schedule from '../pages/Schedule';
+import Home from '../pages/Home';
+import Notifikasi from '../pages/Notifikasi';
 import User from '../pages/User';
 import About from '../pages/About';
 import CekStack from '../pages/CekStack';
 import SplashScreen from '../pages/SplashScreen';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faUser,
@@ -42,7 +44,7 @@ const MainApps = () => {
       }}>
       <Tab.Screen
         name="Home"
-        component={Todos}
+        component={Home}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: () => (
@@ -52,9 +54,9 @@ const MainApps = () => {
       />
       <Tab.Screen
         name="Notification"
-        component={Schedule}
+        component={Notifikasi}
         options={{
-          tabBarLabel: 'Notification',
+          tabBarLabel: 'Notifikasi',
           tabBarIcon: () => (
             <FontAwesomeIcon size={32} color={color.secondary} icon={faBell} />
           ),
@@ -64,7 +66,7 @@ const MainApps = () => {
         name="Profile"
         component={User}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Profil',
           tabBarIcon: () => (
             <FontAwesomeIcon size={32} color={color.secondary} icon={faUser} />
           ),
@@ -74,7 +76,7 @@ const MainApps = () => {
         name="About"
         component={About}
         options={{
-          tabBarLabel: 'About',
+          tabBarLabel: 'Tentang',
           tabBarIcon: () => (
             <FontAwesomeIcon size={32} color={color.secondary} icon={faBook} />
           ),
@@ -97,8 +99,8 @@ const Router = () => {
         }}
       />
       <Stack.Screen
-        name="Main"
-        component={MainApps}
+        name="Login"
+        component={Login}
         options={{
           headerShown: false,
           gestureEnabled: false,
@@ -106,8 +108,17 @@ const Router = () => {
         }}
       />
       <Stack.Screen
-        name="CekStack"
-        component={CekStack}
+        name="Register"
+        component={Register}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="Main"
+        component={MainApps}
         options={{
           headerShown: false,
           gestureEnabled: false,

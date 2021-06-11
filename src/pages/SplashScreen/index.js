@@ -17,7 +17,7 @@ const SplashScreen = ({navigation}) => {
     //   navigation.replace('Main');
     // } else {
     //   navigation.replace('Login');
-    navigation.replace('Main');
+    navigation.replace('Login');
   };
 
   return (
