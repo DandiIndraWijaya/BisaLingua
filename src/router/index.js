@@ -1,30 +1,36 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import Todos from '../pages/Todos';
 import Schedule from '../pages/Schedule';
 import User from '../pages/User';
 import About from '../pages/About';
+import CekStack from '../pages/CekStack';
+import SplashScreen from '../pages/SplashScreen';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
-  faClock,
-  faCalendar,
   faUser,
   faBook,
+  faHome,
+  faBell,
 } from '@fortawesome/free-solid-svg-icons';
+import color from '../style/color';
 
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const Router = () => {
+const MainApps = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: '#ffff',
+        inactiveTintColor: color.primary,
+        activeBackgroundColor: color.primary,
         labelStyle: {
           padding: 5,
           bottom: 10,
           fontSize: 18,
           fontFamily: 'Montserrat-Regular',
-          backgroundColor: '#4c4c4c',
           borderRadius: 10,
         },
         iconStyle: {
@@ -35,32 +41,32 @@ const Router = () => {
         },
       }}>
       <Tab.Screen
-        name="Todos"
+        name="Home"
         component={Todos}
         options={{
-          tabBarLabel: 'Todos',
+          tabBarLabel: 'Home',
           tabBarIcon: () => (
-            <FontAwesomeIcon size={32} color="#4c4c4c" icon={faClock} />
+            <FontAwesomeIcon size={32} color={color.secondary} icon={faHome} />
           ),
         }}
       />
       <Tab.Screen
-        name="Schedule"
+        name="Notification"
         component={Schedule}
         options={{
-          tabBarLabel: 'Schedule',
+          tabBarLabel: 'Notification',
           tabBarIcon: () => (
-            <FontAwesomeIcon size={32} color="#4c4c4c" icon={faCalendar} />
+            <FontAwesomeIcon size={32} color={color.secondary} icon={faBell} />
           ),
         }}
       />
       <Tab.Screen
-        name="User"
+        name="Profile"
         component={User}
         options={{
-          tabBarLabel: 'User',
+          tabBarLabel: 'Profile',
           tabBarIcon: () => (
-            <FontAwesomeIcon size={32} color="#4c4c4c" icon={faUser} />
+            <FontAwesomeIcon size={32} color={color.secondary} icon={faUser} />
           ),
         }}
       />
@@ -70,11 +76,45 @@ const Router = () => {
         options={{
           tabBarLabel: 'About',
           tabBarIcon: () => (
-            <FontAwesomeIcon size={32} color="#4c4c4c" icon={faBook} />
+            <FontAwesomeIcon size={32} color={color.secondary} icon={faBook} />
           ),
         }}
       />
     </Tab.Navigator>
+  );
+};
+
+const Router = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="SplashScreen"
+        component={SplashScreen}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="Main"
+        component={MainApps}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="CekStack"
+        component={CekStack}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 
