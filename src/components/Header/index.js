@@ -11,6 +11,7 @@ import {
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import color from '../../style/color';
+import MontserratText from '../MontserratText';
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
 const Header = ({
@@ -43,18 +44,18 @@ const Header = ({
             />
           </TouchableOpacity>
         )}
-        <Text style={styles.title}>
+        <MontserratText style={styles.title}>
           {title}{' '}
           {subtitle !== undefined && (
             <Text
               style={{
-                color: '#000',
+                color: color.fontPrimary,
                 fontSize: 14,
               }}>
               {subtitle}
             </Text>
           )}
-        </Text>
+        </MontserratText>
         {/* {isSearch && (
           <TouchableOpacity onPress={onPressSearch}>
             <ILSearch />

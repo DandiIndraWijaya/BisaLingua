@@ -5,7 +5,9 @@ import Home from '../pages/Home';
 import Notifikasi from '../pages/Notifikasi';
 import User from '../pages/User';
 import About from '../pages/About';
-import CekStack from '../pages/CekStack';
+import ListTeachers from '../pages/Teacher/ListTeachers';
+import ListSubjects from '../pages/Teacher/Room/ListSubjects';
+import Class from '../pages/Teacher/Room/Class';
 import SplashScreen from '../pages/SplashScreen';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -119,6 +121,33 @@ const Router = () => {
       <Stack.Screen
         name="Main"
         component={MainApps}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="ListTeachers"
+        component={ListTeachers}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="ListSubjects"
+        component={ListSubjects}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="Class"
+        component={Class}
         options={{
           headerShown: false,
           gestureEnabled: false,

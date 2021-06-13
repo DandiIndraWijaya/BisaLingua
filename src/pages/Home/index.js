@@ -1,9 +1,16 @@
 import React, {useEffect} from 'react';
-import {View, BackHandler, Alert, ScrollView, StyleSheet} from 'react-native';
+import {
+  View,
+  BackHandler,
+  Alert,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import Paper from '../../components/Paper';
 import MontserratText from '../../components/MontserratText';
 import Header from '../../components/Header';
-import {Card, Button, Icon} from 'react-native-elements';
+import {Card} from 'react-native-elements';
 import color from '../../style/color';
 
 const Home = ({navigation}) => {
@@ -29,18 +36,33 @@ const Home = ({navigation}) => {
     return true;
   };
 
-  useEffect(() => {
-    BackHandler.addEventListener('hardwareBackPress', handleBackButton);
-  }, []);
+  // BackHandler.addEventListener('hardwareBackPress', handleBackButton);
 
   return (
     <>
       {/* <Header icon="none" navigation={navigation} /> */}
       <Paper>
-        {/* <View>
-          <MontserratText style={{color: 'black'}}>Home!</MontserratText>
-        </View> */}
         <ScrollView>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={() => navigation.navigate('ListTeachers')}>
+            <Card containerStyle={styles.cardItem}>
+              <Card.Image
+                style={{borderRadius: 20}}
+                source={require('../../assets/images/japan5.jpg')}
+              />
+              <View style={styles.cardText}>
+                <MontserratText
+                  style={{
+                    margin: 5,
+                    color: '#ffff',
+                    lineHeight: 25,
+                  }}>
+                  Belajar bahasa dari berbagai dunia dari guru :)
+                </MontserratText>
+              </View>
+            </Card>
+          </TouchableOpacity>
           <Card containerStyle={styles.cardItem}>
             <Card.Image
               style={{borderRadius: 20}}
@@ -53,23 +75,7 @@ const Home = ({navigation}) => {
                   color: '#ffff',
                   lineHeight: 25,
                 }}>
-                Belajar bahasa dari berbagai dunia dari guru :)
-              </MontserratText>
-            </View>
-          </Card>
-          <Card containerStyle={styles.cardItem}>
-            <Card.Image
-              style={{borderRadius: 20}}
-              source={require('../../assets/images/japan5.jpg')}
-            />
-            <View style={styles.cardText}>
-              <MontserratText
-                style={{
-                  margin: 5,
-                  color: '#ffff',
-                  lineHeight: 25,
-                }}>
-                Belajar bahasa dari berbagai dunia dari guru :)
+                Belajar bahasa Games yuk!
               </MontserratText>
             </View>
           </Card>
