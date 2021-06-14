@@ -78,7 +78,7 @@ const PaidCourse = ({navigation}) => {
               activeOpacity={0.7}
               onPress={() => {
                 if (i === 0) {
-                  navigation.navigate('ListSubjects');
+                  navigation.navigate('ListPaidCourse');
                 }
               }}>
               <Card containerStyle={styles.cardItem}>

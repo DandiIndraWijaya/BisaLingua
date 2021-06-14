@@ -15,7 +15,7 @@ import YouTube from 'react-native-youtube';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faHeart, faShare} from '@fortawesome/free-solid-svg-icons';
 
-const Class = ({navigation}) => {
+const ClassPaidCourse = ({navigation}) => {
   const [isReady, setIsReady] = useState(false);
   const [status, setStatus] = useState('');
   const [quality, setQuality] = useState('');
@@ -78,7 +78,7 @@ const Class = ({navigation}) => {
       />
       <YouTube
         apiKey="AIzaSyCubNo71MUH-swVi_MDxKKA4_TCcFEzB8E"
-        videoId="k2_2H3qT9q0" // The YouTube video ID
+        videoId="SceDmiBEESI" // The YouTube video ID
         // play // control playback of video with true/false
         // fullscreen // control whether the video should play in fullscreen or inline
         loop // control whether the video should loop when ended
@@ -208,7 +208,7 @@ const Class = ({navigation}) => {
   );
 };
 
-export default Class;
+export default ClassPaidCourse;
 
 const styles = StyleSheet.create({
   laporkan: {

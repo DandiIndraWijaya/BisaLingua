@@ -12,6 +12,9 @@ import ListSubjects from '../pages/Teacher/Room/ListSubjects';
 import PilihBahasa from '../pages/Games/PilihBahasa';
 import SpeechRecognation from '../pages/Games/SpeechRecognation';
 import Class from '../pages/Teacher/Room/Class';
+import ClassPaidCourse from '../pages/Teacher/Room/ClassPaidCourse';
+import Submission from '../pages/Teacher/Room/Submission';
+import ListPaidCourse from '../pages/Teacher/Room/ListPaidCourse';
 import SplashScreen from '../pages/SplashScreen';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -170,6 +173,33 @@ const Router = () => {
       <Stack.Screen
         name="Class"
         component={Class}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="ListPaidCourse"
+        component={ListPaidCourse}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="ClassPaidCourse"
+        component={ClassPaidCourse}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="Submission"
+        component={Submission}
         options={{
           headerShown: false,
           gestureEnabled: false,
