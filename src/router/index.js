@@ -6,6 +6,8 @@ import Notifikasi from '../pages/Notifikasi';
 import User from '../pages/User';
 import About from '../pages/About';
 import ListTeachers from '../pages/Teacher/ListTeachers';
+import ChooseCourse from '../pages/Teacher/ListTeachers/ChooseCourse';
+import PaidCourse from '../pages/Teacher/ListTeachers/PaidCourse';
 import ListSubjects from '../pages/Teacher/Room/ListSubjects';
 import PilihBahasa from '../pages/Games/PilihBahasa';
 import SpeechRecognation from '../pages/Games/SpeechRecognation';
@@ -123,6 +125,24 @@ const Router = () => {
       <Stack.Screen
         name="Main"
         component={MainApps}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="ChooseCourse"
+        component={ChooseCourse}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="PaidCourse"
+        component={PaidCourse}
         options={{
           headerShown: false,
           gestureEnabled: false,

@@ -60,7 +60,7 @@ const Home = ({navigation}) => {
           </View>
           <TouchableOpacity
             activeOpacity={0.6}
-            onPress={() => navigation.navigate('ListTeachers')}>
+            onPress={() => navigation.navigate('ChooseCourse')}>
             <Card containerStyle={styles.cardItem}>
               <Card.Image
                 style={{borderRadius: 20}}

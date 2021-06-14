@@ -16,7 +16,10 @@ import color from '../../style/color';
 const PilihBahasa = ({navigation}) => {
   return (
     <>
-      <Header onPress={() => navigation.goBack()} subtitle="Pilih Bahasa" />
+      <Header
+        onPress={() => navigation.goBack()}
+        subtitle="Pilih Bahasa Untuk Berlatih"
+      />
       <Paper>
         <ScrollView>
           <TouchableOpacity
@@ -40,6 +43,75 @@ const PilihBahasa = ({navigation}) => {
               </View>
             </Card>
           </TouchableOpacity>
+          <Card containerStyle={styles.cardItem}>
+            <Card.Image
+              style={{borderRadius: 20}}
+              source={{
+                uri: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png',
+              }}
+            />
+            <View style={styles.cardText}>
+              <MontserratText
+                style={{
+                  color: '#ffff',
+                  lineHeight: 25,
+                }}>
+                Jerman
+              </MontserratText>
+            </View>
+          </Card>
+          <Card containerStyle={styles.cardItem}>
+            <Card.Image
+              style={{borderRadius: 20}}
+              source={{
+                uri: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png',
+              }}
+            />
+            <View style={styles.cardText}>
+              <MontserratText
+                style={{
+                  color: '#ffff',
+                  lineHeight: 25,
+                }}>
+                Bahasa Rusia
+              </MontserratText>
+            </View>
+          </Card>
+          <Card containerStyle={styles.cardItem}>
+            <Card.Image
+              style={{borderRadius: 20}}
+              source={{
+                uri: 'https://img5.goodfon.com/wallpaper/nbig/b/e8/japan-flag-flag-of-japan-japanese-flag-japan-large-flag.jpg',
+              }}
+            />
+            <View style={styles.cardText}>
+              <MontserratText
+                style={{
+                  color: '#ffff',
+                  lineHeight: 25,
+                }}>
+                Bahasa Jepang
+              </MontserratText>
+            </View>
+          </Card>
+          <Card containerStyle={styles.cardItem}>
+            <Card.Image
+              style={{borderRadius: 20}}
+              source={{
+                uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/2560px-Flag_of_South_Korea.svg.png',
+              }}
+            />
+            <View style={styles.cardText}>
+              <MontserratText
+                style={{
+                  color: '#ffff',
+                  lineHeight: 25,
+                }}>
+                Bahasa Korea
+              </MontserratText>
+            </View>
+          </Card>
+          <View style={{margin: 30}} />
         </ScrollView>
       </Paper>
     </>
