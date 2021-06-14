@@ -6,6 +6,8 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
+  Dimensions,
+  Image,
 } from 'react-native';
 import Paper from '../../components/Paper';
 import MontserratText from '../../components/MontserratText';
@@ -37,12 +39,25 @@ const Home = ({navigation}) => {
   };
 
   // BackHandler.addEventListener('hardwareBackPress', handleBackButton);
+  let {width} = Dimensions.get('window');
 
   return (
     <>
       {/* <Header icon="none" navigation={navigation} /> */}
       <Paper>
         <ScrollView>
+          <View
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              flexDirection: 'row',
+            }}>
+            <Image
+              style={{width: width * 0.5, height: 110}}
+              source={require('../../assets/icons/icon2.png')}
+            />
+          </View>
           <TouchableOpacity
             activeOpacity={0.6}
             onPress={() => navigation.navigate('ListTeachers')}>
@@ -81,7 +96,7 @@ const Home = ({navigation}) => {
                     color: '#ffff',
                     lineHeight: 25,
                   }}>
-                  Belajar bahasa dari Games yuk!
+                  Belajar pengucapan
                 </MontserratText>
               </View>
             </Card>
@@ -122,6 +137,7 @@ const Home = ({navigation}) => {
               </MontserratText>
             </View>
           </Card>
+          <View style={{margin: 20}} />
         </ScrollView>
       </Paper>
     </>

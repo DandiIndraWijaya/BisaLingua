@@ -68,13 +68,10 @@ const SpeechRecognation = ({navigation}) => {
     //Invoked when SpeechRecognizer is finished recognizing
     console.log('onSpeechResults: ', e);
     setResults(e.value);
-    console.log('HAHA : ', e.value);
     if (e.value[0] === sentence) {
       setIsRight(true);
-      console.log('Benar');
     } else {
       setIsRight(false);
-      console.log('Salah');
     }
   };
 
@@ -152,6 +149,9 @@ const SpeechRecognation = ({navigation}) => {
       <Paper>
         <SafeAreaView style={styles.container}>
           <View style={styles.container}>
+            <MontserratText style={styles.titleTextScore}>
+              Score: 0
+            </MontserratText>
             <MontserratText style={styles.titleText}>
               Ucapkan kalimat di bawah
             </MontserratText>
@@ -193,7 +193,7 @@ const SpeechRecognation = ({navigation}) => {
               {showAnswer && (
                 <MontserratText style={styles.hasilBenar(isRight)}>
                   {isRight && showAnswer ? (
-                    'Benar'
+                    <MontserratText>Benar</MontserratText>
                   ) : (
                     <MontserratText>Salah</MontserratText>
                   )}
@@ -256,6 +256,13 @@ const styles = StyleSheet.create({
     fontSize: 22,
     textAlign: 'center',
     fontWeight: 'bold',
+  },
+  titleTextScore: {
+    fontSize: 22,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: color.secondary,
   },
   sentence: {
     fontSize: 35,
