@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
 import ButtonGoogle from '../../components/Button/ButtonGoogle';
 import Button from '../../components/Button/Button';
 import Paper from '../../components/Paper';
@@ -8,15 +8,30 @@ import Gap from '../../components/Gap';
 import color from '../../style/color';
 
 const Login = ({navigation}) => {
+  let {width} = Dimensions.get('window');
+
   return (
     <Paper>
       <View style={styles.container}>
         <View style={{width: '100%'}}>
+          <View
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              flexDirection: 'row',
+            }}>
+            <Image
+              style={{width: width * 0.5}}
+              source={require('../../assets/icons/icon2.png')}
+            />
+          </View>
           <Text
             style={{
               fontFamily: 'Montserrat-Regular',
               marginVertical: 5,
               marginLeft: 5,
+              marginTop: 40,
             }}>
             Email Anda
           </Text>

@@ -1,51 +1,41 @@
 import React from 'react';
 import Header from '../../../components/Header';
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  Touchable,
-} from 'react-native';
+import {View, ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
 import MontserratText from '../../../components/MontserratText';
+import Input from '../../../components/Input/TextInput';
 import {Card} from 'react-native-elements';
 import color from '../../../style/color';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 const data = [
   {
-    name: 'Sinta Okta',
+    name: 'Randi',
     languageTeach: 'Bahasa Inggris',
     description: 'Belajar bahasa Inggris Menyenangkan',
+    image:
+      'https://images.unsplash.com/photo-1504593811423-6dd665756598?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
   },
   {
     name: 'Sinta Okta',
-    languageTeach: 'Bahasa Inggris',
-    description: 'Belajar bahasa Inggris Menyenangkan',
+    languageTeach: 'Bahasa Mandarin',
+    description: 'Belajar bahasa Mandarin skuy :)',
+    image:
+      'https://images.unsplash.com/photo-1532170579297-281918c8ae72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=762&q=80',
   },
   {
-    name: 'Sinta Okta',
-    languageTeach: 'Bahasa Inggris',
-    description: 'Belajar bahasa Inggris Menyenangkan',
+    name: 'Ferdy',
+    languageTeach: 'Bahasa Jerman',
+    description: '"Let\'s Learn Germany"',
+    image:
+      'https://images.unsplash.com/photo-1526667900883-4a817696e7e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
   },
   {
-    name: 'Sinta Okta',
-    languageTeach: 'Bahasa Inggris',
-    description: 'Belajar bahasa Inggris Menyenangkan',
-  },
-  {
-    name: 'Sinta Okta',
-    languageTeach: 'Bahasa Inggris',
-    description: 'Belajar bahasa Inggris Menyenangkan',
-  },
-  {
-    name: 'Sinta Okta',
-    languageTeach: 'Bahasa Inggris',
-    description: 'Belajar bahasa Inggris Menyenangkan',
-  },
-  {
-    name: 'Sinta Okta',
-    languageTeach: 'Bahasa Inggris',
-    description: 'Belajar bahasa Inggris Menyenangkan',
+    name: 'Claudia',
+    languageTeach: 'Bahasa Rusia',
+    description: 'Belajar bahasa Rusia menyenangkan',
+    image:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
   },
 ];
 
@@ -53,17 +43,42 @@ const ListTeachers = ({navigation}) => {
   return (
     <>
       <Header onPress={() => navigation.goBack()} subtitle="Daftar Guru" />
+      <View
+        style={{
+          backgroundColor: color.white,
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'row',
+          alignItems: 'center',
+          width: '100%',
+          paddingVertical: 15,
+        }}>
+        <View style={{flexBasis: '80%'}}>
+          <Input placeholder="Cari berdasar nama atau bahasa" width="100%" />
+        </View>
+        <View style={{flexBasis: '10%', padding: 5}}>
+          <TouchableOpacity>
+            <FontAwesomeIcon
+              size={32}
+              color={color.secondary}
+              icon={faSearch}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
       <ScrollView style={{backgroundColor: color.white}}>
         {data.map((d, i) => {
           return (
             <TouchableOpacity
               key={i}
               activeOpacity={0.7}
-              onPress={() => navigation.navigate('ListSubjects')}>
+              onPress={() => {
+                if (i === 0) {
+                  navigation.navigate('ListSubjects');
+                }
+              }}>
               <Card containerStyle={styles.cardItem}>
-                <Card.Image
-                  source={require('../../../assets/images/japan5.jpg')}
-                />
+                <Card.Image source={{uri: d.image}} />
                 <View style={styles.cardTextContainer}>
                   <View style={{display: 'flex', flexDirection: 'row'}}>
                     <View>

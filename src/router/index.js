@@ -7,6 +7,8 @@ import User from '../pages/User';
 import About from '../pages/About';
 import ListTeachers from '../pages/Teacher/ListTeachers';
 import ListSubjects from '../pages/Teacher/Room/ListSubjects';
+import PilihBahasa from '../pages/Games/PilihBahasa';
+import SpeechRecognation from '../pages/Games/SpeechRecognation';
 import Class from '../pages/Teacher/Room/Class';
 import SplashScreen from '../pages/SplashScreen';
 import Login from '../pages/Login';
@@ -64,7 +66,7 @@ const MainApps = () => {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Profile"
         component={User}
         options={{
@@ -83,7 +85,7 @@ const MainApps = () => {
             <FontAwesomeIcon size={32} color={color.secondary} icon={faBook} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };
@@ -148,6 +150,24 @@ const Router = () => {
       <Stack.Screen
         name="Class"
         component={Class}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="PilihBahasa"
+        component={PilihBahasa}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="SpeechRecognation"
+        component={SpeechRecognation}
         options={{
           headerShown: false,
           gestureEnabled: false,

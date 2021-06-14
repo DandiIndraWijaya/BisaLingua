@@ -49,7 +49,30 @@ const Home = ({navigation}) => {
             <Card containerStyle={styles.cardItem}>
               <Card.Image
                 style={{borderRadius: 20}}
-                source={require('../../assets/images/japan5.jpg')}
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+                }}
+              />
+              <View style={styles.cardText}>
+                <MontserratText
+                  style={{
+                    color: '#ffff',
+                    lineHeight: 25,
+                  }}>
+                  Belajar bahasa dari berbagai dunia melalui guru :)
+                </MontserratText>
+              </View>
+            </Card>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate('PilihBahasa')}>
+            <Card containerStyle={styles.cardItem}>
+              <Card.Image
+                style={{borderRadius: 20}}
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1555431189-0fabf2667795?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80',
+                }}
               />
               <View style={styles.cardText}>
                 <MontserratText
@@ -58,7 +81,7 @@ const Home = ({navigation}) => {
                     color: '#ffff',
                     lineHeight: 25,
                   }}>
-                  Belajar bahasa dari berbagai dunia dari guru :)
+                  Belajar bahasa dari Games yuk!
                 </MontserratText>
               </View>
             </Card>
@@ -66,7 +89,9 @@ const Home = ({navigation}) => {
           <Card containerStyle={styles.cardItem}>
             <Card.Image
               style={{borderRadius: 20}}
-              source={require('../../assets/images/japan5.jpg')}
+              source={{
+                uri: 'https://images.unsplash.com/photo-1522881451255-f59ad836fdfb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=838&q=80',
+              }}
             />
             <View style={styles.cardText}>
               <MontserratText
@@ -75,7 +100,25 @@ const Home = ({navigation}) => {
                   color: '#ffff',
                   lineHeight: 25,
                 }}>
-                Belajar bahasa Games yuk!
+                Atur akun anda
+              </MontserratText>
+            </View>
+          </Card>
+          <Card containerStyle={styles.cardItem}>
+            <Card.Image
+              style={{borderRadius: 20}}
+              source={{
+                uri: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+              }}
+            />
+            <View style={styles.cardText}>
+              <MontserratText
+                style={{
+                  margin: 5,
+                  color: '#ffff',
+                  lineHeight: 25,
+                }}>
+                Tentang BisaLingua
               </MontserratText>
             </View>
           </Card>

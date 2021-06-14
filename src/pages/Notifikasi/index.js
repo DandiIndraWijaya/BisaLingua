@@ -5,31 +5,31 @@ import MontserratText from '../../components/MontserratText';
 import Header from '../../components/Header';
 
 const Notifikasi = ({navigation}) => {
-  const handleBackButton = () => {
-    Alert.alert(
-      'Keluar',
-      'Keluar dari Aplikasi?',
-      [
-        {
-          text: 'Batal',
-          onPress: () => console.log('Cancel Pressed'),
-          style: 'cancel',
-        },
-        {
-          text: 'OK',
-          onPress: () => BackHandler.exitApp(),
-        },
-      ],
-      {
-        cancelable: false,
-      },
-    );
-    return true;
-  };
+  // const handleBackButton = () => {
+  //   Alert.alert(
+  //     'Keluar',
+  //     'Keluar dari Aplikasi?',
+  //     [
+  //       {
+  //         text: 'Batal',
+  //         onPress: () => console.log('Cancel Pressed'),
+  //         style: 'cancel',
+  //       },
+  //       {
+  //         text: 'OK',
+  //         onPress: () => BackHandler.exitApp(),
+  //       },
+  //     ],
+  //     {
+  //       cancelable: false,
+  //     },
+  //   );
+  //   return true;
+  // };
 
-  useEffect(() => {
-    BackHandler.addEventListener('hardwareBackPress', handleBackButton);
-  }, []);
+  // useEffect(() => {
+  //   BackHandler.addEventListener('hardwareBackPress', handleBackButton);
+  // }, []);
 
   return (
     <>

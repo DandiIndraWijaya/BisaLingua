@@ -25,34 +25,32 @@ const Class = ({navigation}) => {
   const [isLike, setIsLike] = useState(false);
   const [comments, setComments] = useState([
     {
-      name: 'DInda',
+      name: 'Arman',
       date: '1 hari yang lalu',
       comment: 'Keren bisa cepet paham',
+      image:
+        'https://images.unsplash.com/photo-1504593811423-6dd665756598?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
     },
     {
       name: 'DInda',
       date: '1 hari yang lalu',
-      comment: 'Keren bisa cepet paham',
+      comment: 'Bagus banget penjelannya',
+      image:
+        'https://images.unsplash.com/photo-1532170579297-281918c8ae72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=762&q=80',
     },
     {
-      name: 'DInda',
+      name: 'Jackson',
       date: '1 hari yang lalu',
-      comment: 'Keren bisa cepet paham',
+      comment: 'Menarik, penjelasannya bikin cepet paham',
+      image:
+        'https://images.unsplash.com/photo-1526667900883-4a817696e7e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
     },
     {
-      name: 'DInda',
+      name: 'Eren',
       date: '1 hari yang lalu',
-      comment: 'Keren bisa cepet paham',
-    },
-    {
-      name: 'DInda',
-      date: '1 hari yang lalu',
-      comment: 'Keren bisa cepet paham',
-    },
-    {
-      name: 'DInda',
-      date: '1 hari yang lalu',
-      comment: 'Keren bisa cepet paham',
+      comment: 'Mantap',
+      image:
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
     },
   ]);
 
@@ -70,11 +68,11 @@ const Class = ({navigation}) => {
     <>
       <Header
         onPress={() => navigation.goBack()}
-        subtitle="Belajar Huruf dasar 1"
+        subtitle="PART OF SPEECH - 1"
       />
       <YouTube
         apiKey="AIzaSyCubNo71MUH-swVi_MDxKKA4_TCcFEzB8E"
-        videoId="KVZ-P-ZI6W4" // The YouTube video ID
+        videoId="k2_2H3qT9q0" // The YouTube video ID
         // play // control playback of video with true/false
         // fullscreen // control whether the video should play in fullscreen or inline
         loop // control whether the video should loop when ended
@@ -84,6 +82,10 @@ const Class = ({navigation}) => {
         onError={e => setError(e.error)}
         style={{alignSelf: 'stretch', height: 300}}
       />
+      <View style={{padding: 10, marginHorizontal: 20}}>
+        <MontserratText>PART OF SPEECH - 1 by Randi</MontserratText>
+      </View>
+      <Divider />
       <View
         style={{
           display: 'flex',
@@ -161,6 +163,7 @@ const Class = ({navigation}) => {
               return (
                 <>
                   <View
+                    key={i}
                     style={{
                       display: 'flex',
                       flexDirection: 'row',
@@ -169,7 +172,7 @@ const Class = ({navigation}) => {
                     }}>
                     <View>
                       <Image
-                        source={require('../../../assets/images/japan5.jpg')}
+                        source={{uri: comment.image}}
                         style={{width: 40, height: 40, borderRadius: 20}}
                       />
                     </View>

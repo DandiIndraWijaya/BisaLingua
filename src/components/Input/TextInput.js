@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {TextInput, StyleSheet, TouchableOpacity, View} from 'react-native';
 import color from '../../style/color';
 
-const Input = ({type, placeholder, onChangeText, value}) => {
+const Input = ({type, placeholder, onChangeText, width}) => {
   const [border, setBorder] = useState(false);
 
   const onFocus = () => {
@@ -30,7 +30,7 @@ const Input = ({type, placeholder, onChangeText, value}) => {
 
   return (
     <TextInput
-      style={styles.basic(border)}
+      style={styles.basic(border, width)}
       placeholder={placeholder}
       onFocus={onFocus}
       onBlur={onBlur}
@@ -40,7 +40,7 @@ const Input = ({type, placeholder, onChangeText, value}) => {
 };
 
 const styles = StyleSheet.create({
-  basic: border => ({
+  basic: (border, width) => ({
     borderWidth: 1,
     borderColor: border ? color.primary : 'gainsboro',
     borderRadius: 8,
@@ -48,18 +48,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
     padding: 10,
     color: '#333333',
+    width: width === undefined ? '100%' : width,
   }),
   inputStyle: border => ({
     borderWidth: 1,
     borderColor: border ? color.primary : 'gainsboro',
     borderRadius: 8,
   }),
-  input: {
+  input: width => ({
     fontFamily: 'Montserrat-Regular',
     fontSize: 18,
     padding: 10,
     color: '#333333',
-  },
+  }),
 });
 
 export default Input;
