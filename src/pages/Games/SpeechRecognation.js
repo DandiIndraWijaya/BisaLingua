@@ -23,6 +23,7 @@ const SpeechRecognation = ({navigation}) => {
   const [end, setEnd] = useState('');
   const [started, setStarted] = useState('');
   const [results, setResults] = useState([]);
+  const [score, setScore] = useState(0);
   const [partialResults, setPartialResults] = useState([]);
   const [sentence, setSentence] = useState('I will go to school');
   const [loading, setLoading] = useState(false);
@@ -70,6 +71,7 @@ const SpeechRecognation = ({navigation}) => {
     setResults(e.value);
     if (e.value[0] === sentence) {
       setIsRight(true);
+      setScore(10);
     } else {
       setIsRight(false);
     }
@@ -91,7 +93,6 @@ const SpeechRecognation = ({navigation}) => {
     //Starts listening for speech for a specific locale
     // destroyRecognizer();
     setShowAnswer(false);
-    setIsRight(false);
     setLoading(true);
     try {
       await Voice.start('en-US');
@@ -150,7 +151,7 @@ const SpeechRecognation = ({navigation}) => {
         <SafeAreaView style={styles.container}>
           <View style={styles.container}>
             <MontserratText style={styles.titleTextScore}>
-              Score: 0
+              Score: {score}
             </MontserratText>
             <MontserratText style={styles.titleText}>
               Ucapkan kalimat di bawah
