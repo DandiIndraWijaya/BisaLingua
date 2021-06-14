@@ -16,7 +16,7 @@ import color from '../../style/color';
 const PilihBahasa = ({navigation}) => {
   return (
     <>
-      <Header onPress={() => navigation.goBack()} subtitle="Games" />
+      <Header onPress={() => navigation.goBack()} subtitle="Pilih Bahasa" />
       <Paper>
         <ScrollView>
           <TouchableOpacity

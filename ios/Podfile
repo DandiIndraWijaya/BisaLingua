@@ -16,6 +16,8 @@ target 'MyNoteBook' do
 
   pod 'RCTYouTube', :path => '../node_modules/react-native-youtube'
 
+  pod 'react-native-voice', :path => '../node_modules/@react-native-voice/voice'
+
   target 'MyNoteBookTests' do
     inherit! :complete
     # Pods for testing
