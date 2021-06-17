@@ -54,7 +54,7 @@ const Home = ({navigation}) => {
               flexDirection: 'row',
             }}>
             <Image
-              style={{width: width * 0.5, height: 110}}
+              // style={{width: width * 0.5, height: 110}}
               source={require('../../assets/icons/icon2.png')}
             />
           </View>
@@ -74,7 +74,7 @@ const Home = ({navigation}) => {
                     color: '#ffff',
                     lineHeight: 25,
                   }}>
-                  Belajar bahasa dari berbagai dunia melalui guru :)
+                  Belajar bahasa dari berbagai dunia melalui guru
                 </MontserratText>
               </View>
             </Card>

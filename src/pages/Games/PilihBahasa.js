@@ -43,23 +43,27 @@ const PilihBahasa = ({navigation}) => {
               </View>
             </Card>
           </TouchableOpacity>
-          <Card containerStyle={styles.cardItem}>
-            <Card.Image
-              style={{borderRadius: 20}}
-              source={{
-                uri: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png',
-              }}
-            />
-            <View style={styles.cardText}>
-              <MontserratText
-                style={{
-                  color: '#ffff',
-                  lineHeight: 25,
-                }}>
-                Jerman
-              </MontserratText>
-            </View>
-          </Card>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={() => navigation.navigate('SpeechRecognationJerman')}>
+            <Card containerStyle={styles.cardItem}>
+              <Card.Image
+                style={{borderRadius: 20}}
+                source={{
+                  uri: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png',
+                }}
+              />
+              <View style={styles.cardText}>
+                <MontserratText
+                  style={{
+                    color: '#ffff',
+                    lineHeight: 25,
+                  }}>
+                  Jerman
+                </MontserratText>
+              </View>
+            </Card>
+          </TouchableOpacity>
           <Card containerStyle={styles.cardItem}>
             <Card.Image
               style={{borderRadius: 20}}

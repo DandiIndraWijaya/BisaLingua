@@ -23,7 +23,7 @@ const Login = ({navigation}) => {
             }}>
             <Image
               style={{width: width * 0.5}}
-              source={require('../../assets/icons/icon2.png')}
+              source={require('../../assets/icons/icon1.png')}
             />
           </View>
           <Text

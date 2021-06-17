@@ -18,7 +18,7 @@ import MontserratText from '../../components/MontserratText';
 import color from '../../style/color';
 import {Card} from 'react-native-elements';
 
-const SpeechRecognation = ({navigation}) => {
+const SpeechRecognationJerman = ({navigation}) => {
   const [pitch, setPitch] = useState('');
   const [error, setError] = useState('');
   const [end, setEnd] = useState('');
@@ -26,7 +26,7 @@ const SpeechRecognation = ({navigation}) => {
   const [results, setResults] = useState([]);
   const [score, setScore] = useState(0);
   const [partialResults, setPartialResults] = useState([]);
-  const [sentence, setSentence] = useState('I will go to school');
+  const [sentence, setSentence] = useState('Guten Morgen');
   const [loading, setLoading] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
   const [isRight, setIsRight] = useState(false);
@@ -70,7 +70,7 @@ const SpeechRecognation = ({navigation}) => {
     //Invoked when SpeechRecognizer is finished recognizing
     console.log('onSpeechResults: ', e);
     setResults(e.value);
-    if (e.value[0] === sentence) {
+    if (e.value[0].toLowerCase() == sentence.toLowerCase()) {
       setIsRight(true);
       setScore(10);
     } else {
@@ -96,7 +96,7 @@ const SpeechRecognation = ({navigation}) => {
     setShowAnswer(false);
     setLoading(true);
     try {
-      await Voice.start('en-US');
+      await Voice.start('de-DE');
       setPitch('');
       setError('');
       setStarted('');
@@ -158,7 +158,7 @@ const SpeechRecognation = ({navigation}) => {
               <Card.Image
                 style={{borderRadius: 20}}
                 source={{
-                  uri: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png',
+                  uri: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png',
                 }}
               />
               <View style={{width: '100%'}}>
@@ -261,7 +261,7 @@ const SpeechRecognation = ({navigation}) => {
   );
 };
 
-export default SpeechRecognation;
+export default SpeechRecognationJerman;
 
 const styles = StyleSheet.create({
   container: {

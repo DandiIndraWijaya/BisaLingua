@@ -34,7 +34,7 @@ const ChooseCourse = ({navigation}) => {
               flexDirection: 'row',
             }}>
             <Image
-              style={{width: width * 0.5, height: 110}}
+              // style={{width: width * 0.5, height: 110}}
               source={require('../../../assets/icons/icon2.png')}
             />
           </View>

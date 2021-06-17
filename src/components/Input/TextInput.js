@@ -17,7 +17,7 @@ const Input = ({type, placeholder, onChangeText, width}) => {
     return (
       <View style={styles.inputStyle(border)}>
         <TextInput
-          style={styles.input}
+          style={styles.basic(border, width)}
           secureTextEntry={true}
           placeholder="Password"
           onFocus={onFocus}

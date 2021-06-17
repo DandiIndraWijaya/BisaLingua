@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "svg": "react-native link react-native-svg",
     "link-youtube": "react-native link react-native-youtube",
-    "link-speech": "react-native link @react-native-voice/voice"
+    "link-speech": "react-native link @react-native-voice/voice",
+    "build": "react-native bundle --platform android --dev false --entry-file index.js   --bundle-output android/app/src/main/assets/index.android.bundle   --assets-dest android/app/src/main/res/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",

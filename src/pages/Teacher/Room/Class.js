@@ -92,45 +92,47 @@ const Class = ({navigation}) => {
         <MontserratText>PART OF SPEECH - 1 by Randi</MontserratText>
       </View>
       <Divider />
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          padding: 10,
-          marginHorizontal: 20,
-          justifyContent: 'space-around',
-        }}>
-        <View>
-          <TouchableOpacity
-            onPress={() => {
-              setIsLike(!isLike);
-              if (isLike) {
-                setLikes(likes - 1);
-                return;
-              }
-              setLikes(likes + 1);
-            }}>
+      <ScrollView>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: 10,
+            marginHorizontal: 20,
+            justifyContent: 'space-around',
+          }}>
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                setIsLike(!isLike);
+                if (isLike) {
+                  setLikes(likes - 1);
+                  return;
+                }
+                setLikes(likes + 1);
+              }}>
+              <FontAwesomeIcon
+                size={32}
+                color={isLike ? color.heart : color.fonstSecondary}
+                icon={faHeart}
+              />
+            </TouchableOpacity>
+            <MontserratText style={{textAlign: 'center'}}>
+              {likes}
+            </MontserratText>
+          </View>
+          <View>
             <FontAwesomeIcon
               size={32}
-              color={isLike ? color.heart : color.fonstSecondary}
-              icon={faHeart}
+              color={color.fonstSecondary}
+              icon={faShare}
             />
-          </TouchableOpacity>
-          <MontserratText style={{textAlign: 'center'}}>{likes}</MontserratText>
+          </View>
+          <View>
+            <MontserratText style={styles.laporkan}>Laporkan</MontserratText>
+          </View>
         </View>
-        <View>
-          <FontAwesomeIcon
-            size={32}
-            color={color.fonstSecondary}
-            icon={faShare}
-          />
-        </View>
-        <View>
-          <MontserratText style={styles.laporkan}>Laporkan</MontserratText>
-        </View>
-      </View>
-      <ScrollView>
         <Divider />
         <View style={styles.commentsContainer}>
           <View
