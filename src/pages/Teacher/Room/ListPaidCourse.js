@@ -6,6 +6,7 @@ import {Card} from 'react-native-elements';
 import color from '../../../style/color';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faTelegram} from '@fortawesome/free-brands-svg-icons';
 import Input from '../../../components/Input/TextInput';
 
 const data = [
@@ -14,7 +15,7 @@ const data = [
     durasi: '03:40',
     tingkat: 'Pemula',
     image:
-      'https://a-static.besthdwallpaper.com/union-jack-uk-flag-wallpaper-2048x1536-16087_26.jpg',
+      'https://banner2.cleanpng.com/20180410/uzw/kisspng-flag-of-the-united-kingdom-flag-of-spain-flag-of-e-flag-5acca872879883.1080297015233619065554.jpg',
     nav: 'ClassPaidCourse',
   },
   {
@@ -22,7 +23,7 @@ const data = [
     durasi: '',
     tingkat: 'Pemula',
     image:
-      'https://a-static.besthdwallpaper.com/union-jack-uk-flag-wallpaper-2048x1536-16087_26.jpg',
+      'https://banner2.cleanpng.com/20180410/uzw/kisspng-flag-of-the-united-kingdom-flag-of-spain-flag-of-e-flag-5acca872879883.1080297015233619065554.jpg',
     nav: 'Submission',
   },
 ];
@@ -35,25 +36,20 @@ const ListPaidCourse = ({navigation}) => {
         <Card.Image
           source={{
             uri: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
-          }}
-        />
-        {/* <View style={styles.cardTextContainer}>
-                  <View style={{display: 'flex', flexDirection: 'row'}}>
-                    <View>
-                      <MontserratText style={styles.cardText}>
-                        {d.name}
-                      </MontserratText>
-                    </View>
-                    <View style={styles.languageCategory}>
-                      <MontserratText style={{color: color.white}}>
-                        {d.languageTeach}
-                      </MontserratText>
-                    </View>
-                  </View>
-                  <MontserratText style={styles.cardTextSub}>
-                    {d.description}
-                  </MontserratText>
-                </View> */}
+          }}>
+          <View style={{padding: 10}}>
+            <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
+              <FontAwesomeIcon
+                size={42}
+                color={color.fonstSecondary}
+                icon={faTelegram}
+              />
+              <MontserratText style={{color: color.fonstSecondary}}>
+                Chat me
+              </MontserratText>
+            </TouchableOpacity>
+          </View>
+        </Card.Image>
       </Card>
       <View
         style={{

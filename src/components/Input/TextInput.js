@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {TextInput, StyleSheet, TouchableOpacity, View} from 'react-native';
 import color from '../../style/color';
 
-const Input = ({type, placeholder, onChangeText, width}) => {
+const Input = ({type, placeholder, onChangeText, width, value}) => {
   const [border, setBorder] = useState(false);
 
   const onFocus = () => {
@@ -23,6 +23,7 @@ const Input = ({type, placeholder, onChangeText, width}) => {
           onFocus={onFocus}
           onBlur={onBlur}
           onChange={onChangeText}
+          value={value}
         />
       </View>
     );
@@ -35,6 +36,7 @@ const Input = ({type, placeholder, onChangeText, width}) => {
       onFocus={onFocus}
       onBlur={onBlur}
       onChangeText={onChangeText}
+      value={value}
     />
   );
 };

@@ -9,7 +9,7 @@ import {
   Image,
 } from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import {faArrowLeft, faCircle} from '@fortawesome/free-solid-svg-icons';
 import color from '../../style/color';
 import MontserratText from '../MontserratText';
 
@@ -62,14 +62,24 @@ const Header = ({
           </TouchableOpacity>
         )} */}
         {avatar && (
-          <View style={{position: 'absolute', right: 20}}>
-            {/* <TouchableOpacity onPress={() => navigation.navigate('User')}> */}
-            <Image
-              source={require('./5.jpg')}
-              style={{width: 40, height: 40, borderRadius: 20}}
-            />
-            {/* </TouchableOpacity> */}
-          </View>
+          <>
+            <View style={{position: 'absolute', right: 70}}>
+              <MontserratText
+                style={{fontSize: 10, color: color.fonstSecondary}}>
+                Online
+              </MontserratText>
+            </View>
+            <View style={{position: 'absolute', right: 20}}>
+              {/* <TouchableOpacity onPress={() => navigation.navigate('User')}> */}
+              <Image
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+                }}
+                style={{width: 40, height: 40, borderRadius: 20}}
+              />
+              {/* </TouchableOpacity> */}
+            </View>
+          </>
         )}
       </View>
     </SafeAreaView>

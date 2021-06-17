@@ -14,14 +14,14 @@ const data = [
     durasi: '03:40',
     tingkat: 'Pemula',
     image:
-      'https://a-static.besthdwallpaper.com/union-jack-uk-flag-wallpaper-2048x1536-16087_26.jpg',
+      'https://banner2.cleanpng.com/20180410/uzw/kisspng-flag-of-the-united-kingdom-flag-of-spain-flag-of-e-flag-5acca872879883.1080297015233619065554.jpg',
   },
   {
     title: 'PART OF SPEECH - 2',
     durasi: '12:40',
     tingkat: 'Pemula',
     image:
-      'https://a-static.besthdwallpaper.com/union-jack-uk-flag-wallpaper-2048x1536-16087_26.jpg',
+      'https://banner2.cleanpng.com/20180410/uzw/kisspng-flag-of-the-united-kingdom-flag-of-spain-flag-of-e-flag-5acca872879883.1080297015233619065554.jpg',
   },
   {
     title: 'SPEAKING - 1',

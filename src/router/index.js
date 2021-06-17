@@ -13,6 +13,7 @@ import PilihBahasa from '../pages/Games/PilihBahasa';
 import SpeechRecognation from '../pages/Games/SpeechRecognation';
 import SpeechRecognationJerman from '../pages/Games/Jerman';
 import Class from '../pages/Teacher/Room/Class';
+import Chat from '../pages/Teacher/Room/Chat';
 import ClassPaidCourse from '../pages/Teacher/Room/ClassPaidCourse';
 import Submission from '../pages/Teacher/Room/Submission';
 import ListPaidCourse from '../pages/Teacher/Room/ListPaidCourse';
@@ -228,6 +229,15 @@ const Router = () => {
       <Stack.Screen
         name="SpeechRecognationJerman"
         component={SpeechRecognationJerman}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
         options={{
           headerShown: false,
           gestureEnabled: false,
